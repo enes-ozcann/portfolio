@@ -61,3 +61,13 @@ body
         animation: none;
     }
 }
+
+@media (max-width: 600px) {
+    #show-button,
+    #show-second-button {
+        width: 100%;
+        box-sizing: border-box;
+        border-width: 5px;
+        font-size: 16px;
+    }
+}
