@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Enes Özcan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <img src="me_fr.jpg" alt="Apple guy posing.">
+    <button type="button" id="show-button" >click me</button>
+    <button type="button" id="show-second-button" hidden>style me twin</button>
+    <img id="apple-image" src="me_fr.jpg" alt="Apple guy posing." hidden>
+    <img id="apple-image-v2" src="me_fr_v2.jpg" alt="Apple guy posing v2." hidden>
+    <img id="apple-image-v3" src="me_fr_v3.png" alt="Apple akaza posing v3." hidden
+>
+
+
+    <script>
+        const first_button = document.getElementById("show-button")
+        const first_image = document.getElementById("apple-image")
+        const second_button = document.getElementById("show-second-button")
+        const second_image = document.getElementById("apple-image-v2")
+        const third_image = document.getElementById("apple-image-v3");
+
+        const images = [first_image, second_image, third_image];
+        let current_image = 0;
+
+        first_button.addEventListener("click", function()
+        {
+            first_image.hidden = false;
+            first_button.hidden = true;
+            second_button.hidden = false;
+        });
+
+        second_button.addEventListener("click", function ()
+        {
+            images[current_image].hidden = true;
+
+            current_image = (current_image + 1) % images.length;
+
+            images[current_image].hidden = false;
+        });
+    </script>
 </body>
 </html>

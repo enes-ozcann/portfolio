@@ -1,0 +1,63 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#apple-image,
+#apple-image-v2,
+#apple-image-v3
+{
+    display: block;
+    width: 750px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+#apple-image[hidden],
+#apple-image-v2[hidden],
+#apple-image-v3[hidden]
+{
+    display: none;
+}
+
+#show-button,
+#show-second-button
+{
+    background-color: #b91c1c;
+    color: white;
+    border: 10px solid burlywood;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+#apple-image:not([hidden]),
+#apple-image-v2:not([hidden]),
+#apple-image-v3:not([hidden]) 
+{
+    animation: fade-in 500ms ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #apple-image:not([hidden]),
+    #apple-image-v2:not([hidden]),
+    #apple-image-v3:not([hidden]) {
+        animation: none;
+    }
+}
